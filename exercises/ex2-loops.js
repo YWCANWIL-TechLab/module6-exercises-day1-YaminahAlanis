@@ -9,8 +9,17 @@
  * @param {Object} obj 
  */
 function printOutProperties(obj) {
+    for(let prop in obj){
+        console.log(prop);
+    }
     // TODO Finish the function
 }
+const scores={
+    math:85,
+    science:74,
+    english:63
+}
+printOutProperties(scores);
 
 /**
  * Given a random object you have no information on, print out all of its 
@@ -23,8 +32,19 @@ function printOutProperties(obj) {
  * @param {Object} obj 
  */
 function printOutPropertiesAndValues(obj) {
-    // TODO Finish the function
+   // TODO Finish the function 
+   for(let prop in obj){
+        console.log(`${prop} score:${obj[prop]}`);
+    }
 }
+// const tests={
+//     math:85,
+//     science:74,
+//     english:63
+// }
+printOutPropertiesAndValues(scores);
+    
+
 
 
 /**
@@ -35,8 +55,12 @@ function printOutPropertiesAndValues(obj) {
  * @param {String} str 
  */
 function printStringCharacters(str) {
+    for (let character of str){
+        console.log(character);
+    }
     // TODO Finish the function
 }
+printStringCharacters("letters");
 
 
 /**
@@ -49,7 +73,8 @@ function printStringCharacters(str) {
  * @param {String} str 
  */
 function printStringCharactersAndIndexes(str) {
-    // TODO Finish the function
+    
+    // TODO Finish the function  //skip
 }
 
 
@@ -67,8 +92,16 @@ function printStringCharactersAndIndexes(str) {
  * @returns {Boolean}
  */
 function anyBirthdays(birthdayArray) {
+    let today=new Date();
+    for (let date of birthdayArray){
+        if (today.getDate()===date.getDate() && today.getMonth()===date.getMonth()){
+            return true;
+        }
+    }
     // TODO Finish the function
+        return false;
 }
+console.log(anyBirthdays([new Date()]));
 
 
 /**
@@ -81,8 +114,16 @@ function anyBirthdays(birthdayArray) {
  * @returns {Boolean}
  */
 function myFavoriteColor(colorArray, favColor) {
+    for(let color of colorArray){
+        if (color===favColor){
+            return true;
+        }
+    }
+    return false;
     // TODO Finish the function
 }
+console.log(myFavoriteColor(["blue","green","red"],"burgundy"));
+
 
 
 /**
@@ -103,6 +144,13 @@ function myFavoriteColor(colorArray, favColor) {
  * @returns {Object[]}
  */
 function findAllStudents(personArray) {
+    const studentArray=[]
+    for (let person of personArray){
+        if (person.student){
+            studentArray.push(person)
+        }
+    }
+        return studentArray
     // TODO Finish the function
 }
 
@@ -119,7 +167,26 @@ function findAllStudents(personArray) {
  */
 function lastToUppercase(str) {
     // TODO Finish the function
+/** 
+ * 1.Save my copy(in a variable)
+ * 2.Check each index to see if it is the last character
+ * 3.If I do find the last character,convert it to uppercase and add to copy
+ * 4. If a character isn't the last character,add it to the copy
+ * 
+*/
+let answer="";
+for(let i=0;i<str.length;i++){
+    if(i===str.length -1){//i is the last index
+        answer=answer+str[i].toUpperCase();
+    }
+    else {//i is not the last index
+        answer=answer+str[i];
+    }
 }
+return answer;
+}
+lastToUppercase("lastly")
+console.log(lastToUppercase("lastly"));
 
 /**
  * Given a Number, magicNumber, use a while loop to continue generating and 
@@ -130,5 +197,12 @@ function lastToUppercase(str) {
  * @param {Number} magicNumber 
  */
 function magicNumber(magicNumber) {
+    let randomNumber;
+    while(randomNumber!==magicNumber){
+        randomNumber=Math.floor(Math.random()*10);
+        console.log(randomNumber);
+    }
     // TODO Finish the function
 }  
+
+//Finished exercise 2

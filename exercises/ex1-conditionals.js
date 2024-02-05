@@ -14,7 +14,13 @@
  * @param {Number} age 
  * @returns {Boolean}
  */
-function canIVote(age) {
+function canIVote(age){ 
+    if (age >=18){
+        return true;
+}
+    else {
+        return false;
+    }
     // TODO Finish the function
 }
 
@@ -32,6 +38,13 @@ function canIVote(age) {
  * @returns {Boolean}
  */
 function canRunForPresident(age, bornInUS) {
+    if (age >=35 && bornInUS){
+        return true;
+ }
+    else {
+        return false;
+    }
+
     // TODO Finish the function
 }
 
@@ -40,7 +53,7 @@ function canRunForPresident(age, bornInUS) {
  * Your area code is the first three digits of your phone number.
  * 
  * Given a String representing a city in Illinois, return 815 if the city is 
- * Rockford, or 000 otherwise.
+ * Rockford, or 0 otherwise.
  * 
  * * Note: You will need to standardize your input to make sure it's what you
  * * are expecting this. I would recommend using String's trim() method and 
@@ -50,6 +63,13 @@ function canRunForPresident(age, bornInUS) {
  * @returns {Number}
  */
 function whatIsMyAreaCode(cityInIL) {
+    cityInIL=cityInIL.trim().toUpperCase();
+    if (cityInIL ==="ROCKFORD"){
+        return 815;
+}
+    else {
+        return 0;
+    }
     // TODO Finish the function
 }
 
@@ -72,6 +92,18 @@ function whatIsMyAreaCode(cityInIL) {
  * @returns {String}
  */
 function driveToClass(gasMeter, tirePressure, batteryCharged) {
+    if (gasMeter >0 && tirePressure >28 && batteryCharged) {
+        return "Drive to work";
+    }
+    else if (gasMeter <=0) {
+        return "Gas Up";
+    }
+    else if (tirePressure <28) {
+        return "Air Up";
+    }
+    else if (!batteryCharged) {
+        return "Get a New Battery";
+    }
     // TODO Finish the function
 }
 
@@ -87,6 +119,18 @@ function driveToClass(gasMeter, tirePressure, batteryCharged) {
  * @returns {String}
  */
 function toWaitOrNotToWait(numPeopleInLine) {
+    if (numPeopleInLine <20){
+        return "happy to wait";
+    }
+    else if (numPeopleInLine >20 && numPeopleInLine <40) {
+        return "begrudginly wait";
+    }
+    else {
+        return "leave"
+    }
+
+
+         
     // TODO Finish the function
 }
 
@@ -114,6 +158,24 @@ function toWaitOrNotToWait(numPeopleInLine) {
  * @returns {String}
  */
 function callThemBackConditional(name) {
+    if (name==="Gary Johnson") {
+        return "call back";
+    }
+    if (name==="Bert Kreischer") {
+        return "call back";
+    }
+    if (name==="Joe Packrat") {
+        return "call back";
+    }
+    if (name==="Spongebob Squarepants") {
+        return "call back";
+    }
+    if (name==="Don Carter") {
+        return "call back";
+    }
+    else {
+        return "spam";
+    }
     // TODO Finish this function using conditionals
 }
 
@@ -141,5 +203,18 @@ function callThemBackConditional(name) {
  * @returns {String}
  */
 function callThemBackSwitch(name) {
+    switch(name) {
+        case "Gary Johnson":
+        case "Bert Kreischer":
+        case "Joe Packrat":
+        case "Spongebob Squarepants":
+        case "Don Carter":
+            return "call back"
+        default:
+            return "spam"
+    }
+
     // TODO Finish this function using a switch statement
-}
+}   
+
+//Finished exercise 1
